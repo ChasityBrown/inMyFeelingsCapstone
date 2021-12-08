@@ -19,8 +19,8 @@ export const Memes = () => {
         <h3>Memes</h3>
         {
             memes.map(meme => {
-            return <p key= {meme}>"{meme.caption}"
-                    {meme.memeUrl}</p>})
+            return <p class="post__tagline" key= {meme}>"{meme.caption}"
+                    <img class="post__image" src={meme.memeUrl}></img> </p>})
         }
         </>
     )
