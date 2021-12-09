@@ -23,8 +23,6 @@ export const ApplicationViews = () => {
             </Route>
             <Route exact path="/diary">
                 <DiaryEntries/>
-            </Route>
-            <Route exact path="/diary/entryform">
                 <DiaryEntryForm/>
             </Route>
             <Route exact path="/songs">
