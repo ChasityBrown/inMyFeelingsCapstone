@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-export const DiaryEntryForm = (renderFunc) => {
+export const DiaryEntryForm = ({setter}) => {
     const [diaryEntry, updateDiaryEntry] = useState({
-        entry: "",
-
-    })
+        datePosted: "",
+        userId:1,
+        entry: ""
+    }) 
 
     const history = useHistory()
     
     const addNewEntry = (evt) => {
         evt.preventDefault()
         const newEntry = {
+            datePosted: new Date().toLocaleDateString(),
+            userId: diaryEntry.userId,
             entry: diaryEntry.entry
         }
 
@@ -27,20 +30,26 @@ export const DiaryEntryForm = (renderFunc) => {
         return fetch("http://localhost:8098/diaryEntries", fetchOption)
         .then(res => res.json())
         .then(() => {
-                history.push("/diary")
+            fetch("http://localhost:8098/diaryEntries")
+        .then(res => res.json())
+        .then((diaryEntriesArray) => {
+            setter(diaryEntriesArray)
+            updateDiaryEntry({
+                datePosted: "",
+                userId:1,
+                entry:""
             })
-        .then(()=> {
-            renderFunc()}
-        )
+            })
         
-        }
+        })}
+    
     return (
         <form className="diaryEntryForm">
             <h2 className="diaryEntryForm__title">What's on Your Mind Today?</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="entry">Type Here</label>
-                    <input
+                    <label htmlFor="name">Type Here</label>
+                    <input value={diaryEntry.entry}
                         onChange={
                             (evt) => {
                                 const copy = {...diaryEntry}

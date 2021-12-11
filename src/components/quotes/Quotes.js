@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from "react"
+import { QuoteForm } from "./QuoteForm"
 
 
 export const Quotes = () => {
@@ -20,6 +21,7 @@ export const Quotes = () => {
             quotes.map(quote => {
             return <p key= {quote}>"{quote.text}" by {quote.author}</p>})
         }
+        <QuoteForm quoteSetter={setQuotes} />
         </>
     )
 }

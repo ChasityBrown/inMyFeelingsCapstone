@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
-
+import { SillyContentForm } from "./SillyContentForm"
 
 export const Memes = () => {
     const [memes, setMemes] = useState ([])
@@ -22,6 +22,7 @@ export const Memes = () => {
             return <p class="post__tagline" key= {meme}>"{meme.caption}"
                     <img class="post__image" src={meme.memeUrl}></img> </p>})
         }
+        <SillyContentForm memeSetter={setMemes} />
         </>
     )
 }
