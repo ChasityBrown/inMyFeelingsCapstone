@@ -24,6 +24,17 @@ export const FaveSongs = () => {
                 setSongs(songsArray)
          })
         })}
+    const updateSong = faveSong => {
+            return fetch(`http://localhost:8098/faveSongs/${faveSong.id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(faveSong)
+            })
+              .then(getAnimals)
+          }
+        const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
     return (
         <>
         <h3>Everyone's Fave Songs</h3>
@@ -31,10 +42,12 @@ export const FaveSongs = () => {
         {
             faveSongs.map(song => {
             return <p key= {song}>"{song.title}" by {song.artist}
-                    <button onClick={() => {
+                    {loggedInUser === song.userId 
+                    ? <button onClick={() => {
                 deleteSong(song.id)
                 }}>Delete
             </button>
+            : ""}
             </p>
                 })
         }

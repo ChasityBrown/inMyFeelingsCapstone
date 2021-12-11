@@ -6,7 +6,7 @@ export const FaveSongForm = ({songSetter}) => {
     const [faveSong, updateSongs] = useState({
         artist: "",
         title: "",
-        userId:1
+        userId: 1
     }) 
 
     const history = useHistory()
@@ -16,7 +16,7 @@ export const FaveSongForm = ({songSetter}) => {
         const newSong = {
             artist: faveSong.artist,
             title: faveSong.title,
-            userId: faveSong.userId
+            userId: parseInt(localStorage.getItem("feelings_user"))
         }
 
         const fetchOption = {

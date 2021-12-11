@@ -17,7 +17,7 @@ export const QuoteForm = ({quoteSetter}) => {
         const newQuote = {
             text: quote.text,
             author: quote.author,
-            userId: quote.userId,
+            userId: parseInt(localStorage.getItem("feelings_user")),
             datePosted: new Date().toLocaleDateString()
         }
 

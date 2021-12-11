@@ -39,7 +39,7 @@ export const SillyContentForm = ({memeSetter, dadJokeSetter}) => {
         const newMeme = {
             caption: meme.caption,
             memeUrl: meme.memeUrl,
-            userId: meme.userId,
+            userId: parseInt(localStorage.getItem("feelings_user")),
             datePosted: new Date().toLocaleDateString()
         }
 

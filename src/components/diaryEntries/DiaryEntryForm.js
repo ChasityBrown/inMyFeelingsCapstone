@@ -15,7 +15,7 @@ export const DiaryEntryForm = ({setter}) => {
         evt.preventDefault()
         const newEntry = {
             datePosted: new Date().toLocaleDateString(),
-            userId: diaryEntry.userId,
+            userId: parseInt(localStorage.getItem("feelings_user")),
             entry: diaryEntry.entry
         }
 

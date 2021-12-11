@@ -24,11 +24,12 @@ export const DiaryEntries = () => {
                 setDiaryEntry(data)
          })
         })}
+        const loggedInUser = diaryEntries.filter((diaryEntry) => diaryEntry.userId === parseInt(localStorage.getItem("feelings_user")))
     return (
         <>
         <h3>Let it Out!</h3>
         {
-            diaryEntries.map(diaryEntry => {
+            loggedInUser.map(diaryEntry => {
                 return <p key={diaryEntry}>{diaryEntry.entry}
                 -{diaryEntry.datePosted}
                 <button onClick={() => {
