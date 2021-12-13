@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 
 export const FaveSongForm = ({songSetter}) => {
     const [faveSong, updateSongs] = useState({
@@ -9,7 +9,7 @@ export const FaveSongForm = ({songSetter}) => {
         userId: 1
     }) 
 
-    const history = useHistory()
+    // const history = useHistory()
     
     const addNewSong = (evt) => {
         evt.preventDefault()

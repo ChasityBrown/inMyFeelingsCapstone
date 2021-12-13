@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 
 export const QuoteForm = ({quoteSetter}) => {
     const [quote, updateQuotes] = useState({
@@ -10,7 +10,7 @@ export const QuoteForm = ({quoteSetter}) => {
         datePosted: ""
 
     })
-    const history = useHistory()
+    // const history = useHistory()
     
     const addNewQuote = (evt) => {
         evt.preventDefault()

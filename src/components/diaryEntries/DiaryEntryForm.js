@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router";
+//import { useHistory } from "react-router";
 
 export const DiaryEntryForm = ({setter}) => {
     const [diaryEntry, updateDiaryEntry] = useState({
@@ -9,7 +9,7 @@ export const DiaryEntryForm = ({setter}) => {
         entry: ""
     }) 
 
-    const history = useHistory()
+    // const history = useHistory()
     
     const addNewEntry = (evt) => {
         evt.preventDefault()

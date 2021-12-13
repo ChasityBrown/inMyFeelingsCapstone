@@ -30,7 +30,7 @@ export const Quotes = () => {
         <h3>Quotes</h3>
         {
             quotes.map(quote => {
-            return <p key= {quote}>"{quote.text}" by {quote.author}
+            return <p key={quote.id}>"{quote.text}" by {quote.author}
             {loggedInUser === quote.userId 
                     ? <button onClick={() => {
                 deleteQuote(quote.id)

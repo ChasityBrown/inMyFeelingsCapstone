@@ -1,18 +1,12 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { SillyContentForm } from "./SillyContentForm"
 
-export const DadJokes = () => {
+export const DadJokes = ({content}) => {
     const [dadJokes, setJokes] = useState ([])
     useEffect(
         () => {
-            fetch("http://localhost:8098/dadJokes")
-                .then(res => res.json())
-                .then((dadJokesArray) => {
-                    setJokes(dadJokesArray)
-        }
-    )
-}, []
+            setJokes(content)
+        }, [content]
     )
     const deleteJoke = (id) => {
         fetch(`http://localhost:8098/dadJokes/${id}`, {
@@ -30,7 +24,7 @@ export const DadJokes = () => {
         <h3>Jokes</h3>
         {
             dadJokes.map(dadJoke => {
-            return <p key= {dadJoke}>"{dadJoke.joke}"
+            return <p key={dadJoke.id}>"{dadJoke.joke}"
             {loggedInUser === dadJoke.userId 
                     ? <button onClick={() => {
                 deleteJoke(dadJoke.id)
@@ -38,7 +32,6 @@ export const DadJokes = () => {
             </button>
             : ""}</p>})
         }
-        <SillyContentForm dadJokeSetter={setJokes} />
         </>
     )
 }

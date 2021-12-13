@@ -5,19 +5,36 @@ import { Memes } from "./Memes"
 import { SillyContentForm } from "./SillyContentForm"
 
 export const SillyContent = () => {
-    const [sillyContent, randomContent] = useState ([])
-//     useEffect(
-//         () => {
-            
-//         }
-//     )
-// }, []
+    // const [content, setContent]= useState([])
+    const [memeContent, setMemeContent] = useState([])
+    const [jokeContent, setJokeContent] = useState([])
+
+    useEffect(
+        () => {
+            fetch("http://localhost:8098/dadJokes")
+                .then(res => res.json())
+                .then((dadJokesArray) => {
+                    setJokeContent(dadJokesArray)
+        }
+    )
+}, [])
+    useEffect(
+        () => {
+            fetch("http://localhost:8098/memes")
+            .then(res => res.json())
+            .then((memesArray) => {
+                setMemeContent(memesArray)
+    }
+)
+}, []
+)
     
     return (
         <>
         <h3>Silly Content</h3>
-        <DadJokes />
-        <Memes />
+        <DadJokes content={jokeContent} />
+        <Memes memeContent={memeContent}/>
+        <SillyContentForm contentSetter={setJokeContent} anotherContentSetter={setMemeContent} />
         </>
     )
 }

@@ -25,7 +25,7 @@ export const FaveSongs = () => {
          })
         })}
         //if i get to the stretch goal of editting the starter code is below
-        
+
     // const updateSong = faveSong => {
     //         return fetch(`http://localhost:8098/faveSongs/${faveSong.id}`, {
     //           method: "PUT",
@@ -50,7 +50,7 @@ export const FaveSongs = () => {
         <h4>Grab a song and give it a listen and make sure to leave a song for someone else!</h4>
         {
             faveSongs.map(song => {
-            return <p key= {song}>"{song.title}" by {song.artist}
+            return <p key={song.id}>"{song.title}" by {song.artist}
                     {loggedInUser === song.userId 
                     ? <button onClick={() => {
                 deleteSong(song.id)
