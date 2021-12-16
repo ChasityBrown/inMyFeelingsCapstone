@@ -57,16 +57,17 @@ export const Register = (props) => {
                 <h1 className="h3 mb-3 font-weight-normal">Register for "All in My Feelings"</h1>
                 <fieldset>
                     <label htmlFor="name"> What Do They Call You? </label>
-                    <input onChange={updateUser}
+                    <input style={{fontSize: "large", color: "seagreen", backgroundColor: "pink"}} onChange={updateUser}
                            type="text" id="name" className="form-control"
                            placeholder="Enter your name" required autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> What's Your Email? </label>
-                    <input onChange={updateUser} type="email" id="email" className="form-control" placeholder="Email address" required />
+                    <input style={{fontSize: "large", color: "seagreen", backgroundColor: "pink"}} onChange={updateUser} type="email" id="email" className="form-control" placeholder="Email address" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register! </button>
+                    <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink"}}
+                    type="submit"> Register! </button>
                 </fieldset>
             </form>
         </main>

@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -67,7 +69,7 @@ code {
 }
 
 .post__image {
-  width: 50%;
+  width: 25%;
 }
 
 .post__actions {
@@ -79,6 +81,7 @@ code {
 .post__tagline {
   font-size: 1.0em;
   margin: 1em 0 0.5em 0;
+
 }
 
 .post__remark {

@@ -3,9 +3,9 @@ import { useEffect, useState } from "react"
 import { DadJokes } from "./DadJokes"
 import { Memes } from "./Memes"
 import { SillyContentForm } from "./SillyContentForm"
+import "./SillyContent.css"
 
 export const SillyContent = () => {
-    // const [content, setContent]= useState([])
     const [memeContent, setMemeContent] = useState([])
     const [jokeContent, setJokeContent] = useState([])
 
@@ -15,26 +15,26 @@ export const SillyContent = () => {
                 .then(res => res.json())
                 .then((dadJokesArray) => {
                     setJokeContent(dadJokesArray)
-        }
-    )
-}, [])
+                }
+                )
+        }, [])
     useEffect(
         () => {
             fetch("http://localhost:8098/memes")
-            .then(res => res.json())
-            .then((memesArray) => {
-                setMemeContent(memesArray)
-    }
-)
-}, []
-)
-    
+                .then(res => res.json())
+                .then((memesArray) => {
+                    setMemeContent(memesArray)
+                }
+                )
+        }, []
+    )
+
     return (
         <>
-        <h3>Silly Content</h3>
-        <DadJokes content={jokeContent} />
-        <Memes memeContent={memeContent}/>
-        <SillyContentForm contentSetter={setJokeContent} anotherContentSetter={setMemeContent} />
+            <h3>Silly Content</h3>
+            <DadJokes content={jokeContent} />
+            <Memes memeContent={memeContent} />
+            <SillyContentForm contentSetter={setJokeContent} anotherContentSetter={setMemeContent} />
         </>
     )
 }

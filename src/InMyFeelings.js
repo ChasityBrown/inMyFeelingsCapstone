@@ -7,32 +7,33 @@ import { Register } from "./components/auth/Register";
 import "./InMyFeelings.css";
 
 export const InMyFeelings = () => { //function/component that will render html with browser
-    return (
-        <>
-            <Route
-                render={() => {
-                    if (localStorage.getItem("feelings_user")) {
-                        return (
-                        <>
-                            <h1>All In My Feelings</h1>
-                            <NavBar />
-                            <ApplicationViews />
-                        </>
-          );
-        } else {
-          return <Redirect to="/login" />;
-        }
-      }}
-    />
+  return (
+    <>
+    <div style={{backgroundImage: "url(/background.jpeg)"}}>
+      <Route
+        render={() => {
+          if (localStorage.getItem("feelings_user")) {
+            return (
+              <>
+                <h1>All In My Feelings</h1>
+                <NavBar />
+                <ApplicationViews />
+              </>
+            );
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
 
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
-           
-        </>
-    )
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/register">
+        <Register />
+      </Route>
+</div>
+    </>
+  )
 }
 //simply contains other components that are responsible for the presentation and behavior of the application

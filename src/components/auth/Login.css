@@ -12,7 +12,6 @@ fieldset {
 .form--login {
     display: inline-block;
     margin: 0 auto;
-    text-align: left;
 }
 
 .form--login > fieldset > input[type="email"] {
@@ -29,11 +28,11 @@ fieldset {
     width: 94%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
-    font-size: 1rem;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
+    background-color: pink;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -42,7 +41,7 @@ fieldset {
 }
 
 .container--login {
-    text-align: center;
+    text-align: left;
 }
 
 .form--login {
@@ -50,7 +49,6 @@ fieldset {
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }

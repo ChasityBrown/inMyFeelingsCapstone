@@ -1,16 +1,13 @@
 import React from "react";
 import { useState } from "react";
-//import { useHistory } from "react-router";
+import "./DiaryEntries.css"
 
-export const DiaryEntryForm = ({setter}) => {
+export const DiaryEntryForm = ({ setter }) => {
     const [diaryEntry, updateDiaryEntry] = useState({
         datePosted: "",
-        userId:1,
+        userId: 1,
         entry: ""
-    }) 
-
-    // const history = useHistory()
-    
+    })
     const addNewEntry = (evt) => {
         evt.preventDefault()
         const newEntry = {
@@ -28,31 +25,33 @@ export const DiaryEntryForm = ({setter}) => {
         }
 
         return fetch("http://localhost:8098/diaryEntries", fetchOption)
-        .then(res => res.json())
-        .then(() => {
-            fetch("http://localhost:8098/diaryEntries")
-        .then(res => res.json())
-        .then((diaryEntriesArray) => {
-            setter(diaryEntriesArray)
-            updateDiaryEntry({
-                datePosted: "",
-                userId:1,
-                entry:""
+            .then(res => res.json())
+            .then(() => {
+                fetch("http://localhost:8098/diaryEntries")
+                    .then(res => res.json())
+                    .then((diaryEntriesArray) => {
+                        setter(diaryEntriesArray)
+                        updateDiaryEntry({
+                            datePosted: "",
+                            userId: 1,
+                            entry: ""
+                        })
+                    })
+
             })
-            })
-        
-        })}
-    
+    }
+
     return (
         <form className="diaryEntryForm">
             <h2 className="diaryEntryForm__title">What's on Your Mind Today?</h2>
             <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">Type Here</label>
-                    <input value={diaryEntry.entry}
+                <div className="entryForm">
+                    <label style={{fontSize: "24px"}} htmlFor="name">Type Here</label>
+                    <textarea className="entryForm" id="textBody" name="letter" rows="25" cols="40"
+                    value={diaryEntry.entry}
                         onChange={
                             (evt) => {
-                                const copy = {...diaryEntry}
+                                const copy = { ...diaryEntry }
                                 copy.entry = evt.target.value
                                 updateDiaryEntry(copy)
                             }
@@ -61,12 +60,12 @@ export const DiaryEntryForm = ({setter}) => {
                         type="text"
                         className="form-control"
                         placeholder="Just start typing... It's okay... only you can see this... I promise :)"
-                         />
+                    ></textarea>
                 </div>
             </fieldset>
-            <button onClick={addNewEntry} className="btn btn-primary">
+            <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}} className= "button" onClick={addNewEntry} className="btn btn-primary">
                 Save
             </button>
         </form>
-    )            
+    )
 }

@@ -1,17 +1,13 @@
 import React from "react";
 import { useState } from "react";
-// import { useHistory } from "react-router";
 
-export const QuoteForm = ({quoteSetter}) => {
+export const QuoteForm = ({ quoteSetter }) => {
     const [quote, updateQuotes] = useState({
         text: "",
         author: "",
-        userId:1,
+        userId: 1,
         datePosted: ""
-
     })
-    // const history = useHistory()
-    
     const addNewQuote = (evt) => {
         evt.preventDefault()
         const newQuote = {
@@ -30,21 +26,22 @@ export const QuoteForm = ({quoteSetter}) => {
         }
 
         return fetch("http://localhost:8098/quotes", fetchOption)
-        .then(res => res.json())
-        .then(() => {
-            fetch("http://localhost:8098/quotes")
             .then(res => res.json())
-            .then((data) => {
-                quoteSetter(data)
-                updateQuotes({
-                    text: "",
-                    author: "",
-                    userId:1,
-                    datePosted: ""
-                })
-            })
-        }
-        )}
+            .then(() => {
+                fetch("http://localhost:8098/quotes")
+                    .then(res => res.json())
+                    .then((data) => {
+                        quoteSetter(data)
+                        updateQuotes({
+                            text: "",
+                            author: "",
+                            userId: 1,
+                            datePosted: ""
+                        })
+                    })
+            }
+            )
+    }
     return (
         <form className="QuoteForm">
             <h2 className="QuoteForm__title">Wanna leave a quote of your own?</h2>
@@ -54,7 +51,7 @@ export const QuoteForm = ({quoteSetter}) => {
                     <input value={quote.text}
                         onChange={
                             (evt) => {
-                                const copy = {...quote}
+                                const copy = { ...quote }
                                 copy.text = evt.target.value
                                 updateQuotes(copy)
                             }
@@ -63,7 +60,7 @@ export const QuoteForm = ({quoteSetter}) => {
                         type="text"
                         className="form-control"
                         placeholder="What did they say?"
-                         />
+                    />
                 </div>
             </fieldset>
             <fieldset>
@@ -72,20 +69,20 @@ export const QuoteForm = ({quoteSetter}) => {
                     <input value={quote.author}
                         onChange={
                             (evt) => {
-                                const copy = {...quote}
+                                const copy = { ...quote }
                                 copy.author = evt.target.value
                                 updateQuotes(copy)
                             }
-                    }
-                    required autoFocus
-                    type="text" 
-                    className="form-control"
-                    placeholder="Who said this?" />
+                        }
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Who said this?" />
                 </div>
             </fieldset>
-            <button onClick={addNewQuote} className="btn btn-primary">
+            <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}} onClick={addNewQuote} className="btn btn-primary">
                 Save
             </button>
         </form>
-    )            
+    )
 }

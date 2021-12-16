@@ -1,3 +1,4 @@
+import { getByPlaceholderText } from "@testing-library/dom";
 import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
@@ -39,22 +40,22 @@ export const Login = () => {
                     <h1>All in My Feelings</h1>
                     <h2>Please Sign In</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label htmlFor="inputEmail" style={{fontSize: "24px"}}> Email address </label>
                         <input type="email"
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Email address"
+                            placeholder="example@email.com"
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink"}} type="submit">
                             Sign in
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link style={{fontSize: "large", color: "seagreen", backgroundColor: "pink"}} to="/register">Not a member yet?</Link>
             </section>
         </main>
     )

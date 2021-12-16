@@ -24,35 +24,20 @@ export const FaveSongs = () => {
                 setSongs(songsArray)
          })
         })}
-        //if i get to the stretch goal of editting the starter code is below
-
-    // const updateSong = faveSong => {
-    //         return fetch(`http://localhost:8098/faveSongs/${faveSong.id}`, {
-    //           method: "PUT",
-    //           headers: {
-    //             "Content-Type": "application/json"
-    //           },
-    //           body: JSON.stringify(faveSong)
-    //         })
-    //           .then(()=>{
-    //               fetch("http://localhost:8098/faveSongs")
-    //               .then(res=> res.json())
-    //               .then((data) => {
-    //                   setSongs(data)
-    //               })
-    //           }
-    //           ) 
-    //       }
+    
         const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
     return (
         <>
-        <h3>Everyone's Fave Songs</h3>
-        <h4>Grab a song and give it a listen and make sure to leave a song for someone else!</h4>
+        <h2>Everyone's Fave Songs</h2>
+        <h3>Grab a song and give it a listen and make sure to leave a song for someone else!</h3>
         {
             faveSongs.map(song => {
-            return <p key={song.id}>"{song.title}" by {song.artist}
+            return <p style={{fontSize: "24px", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted",
+            width: "30%", display: "flex", alignItems: "center"}}
+            key={song.id}>"{song.title}" by {song.artist}
                     {loggedInUser === song.userId 
-                    ? <button onClick={() => {
+                    ? <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}}
+                    onClick={() => {
                 deleteSong(song.id)
                 }}>Delete
             </button>

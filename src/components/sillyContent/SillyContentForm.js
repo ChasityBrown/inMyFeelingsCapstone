@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-// import { useHistory } from "react-router";
 
 export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
     const [meme, updateMemes] = useState({
@@ -14,8 +13,7 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
         userId: 1
     })
     const [sillyContent, changeSelectedContent] = useState(0)
-    
-    // const history = useHistory()
+
     useEffect(
         () => {
             fetch("http://localhost:8098/memes")
@@ -178,7 +176,7 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
                 <fieldset>
                     <div className="form-group">
                         <label htmlFor="sillyContent">What do you want to post?</label>
-                        <select 
+                        <select
                             value={sillyContent}
                             name="sillyContent"
                             id="sillyContentId"

@@ -3,43 +3,49 @@ import { useEffect, useState } from "react"
 import { DiaryEntryForm } from "./DiaryEntryForm"
 
 export const DiaryEntries = () => {
-    const [diaryEntries, setDiaryEntry] = useState ([])
+    const [diaryEntries, setDiaryEntry] = useState([])
     useEffect(
         () => {
             fetch("http://localhost:8098/diaryEntries")
-            .then(res => res.json())
-            .then((diaryEntriesArray) => {
-                setDiaryEntry(diaryEntriesArray)
-        }
-        )
-    }, []
+                .then(res => res.json())
+                .then((diaryEntriesArray) => {
+                    setDiaryEntry(diaryEntriesArray)
+                }
+                )
+        }, []
     )
     const deleteEntry = (id) => {
         fetch(`http://localhost:8098/diaryEntries/${id}`, {
-            method: "DELETE"}
-         ).then(()=>{
+            method: "DELETE"
+        }
+        ).then(() => {
             fetch("http://localhost:8098/diaryEntries")
-            .then(res => res.json())
-            .then((data) => {
-                setDiaryEntry(data)
-         })
-        })}
-        const loggedInUser = diaryEntries.filter((diaryEntry) => diaryEntry.userId === parseInt(localStorage.getItem("feelings_user")))
+                .then(res => res.json())
+                .then((data) => {
+                    setDiaryEntry(data)
+                })
+        })
+    }
+    const loggedInUser = diaryEntries.filter((diaryEntry) => diaryEntry.userId === parseInt(localStorage.getItem("feelings_user")))
     return (
         <>
-        <h3>Let it Out!</h3>
-        {
-            loggedInUser.map(diaryEntry => {
-                return <p key={diaryEntry}>{diaryEntry.entry}
-                -{diaryEntry.datePosted}
-                <button onClick={() => {
-                deleteEntry(diaryEntry.id)
-                }}>Delete
-                </button>
-                </p>})
-                
-        }   
-        <DiaryEntryForm setter={setDiaryEntry} />        
+            <h2>Let it Out!</h2>
+            {
+                loggedInUser.map(diaryEntry => {
+                    return <p style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted"}}
+                    key={diaryEntry}>{diaryEntry.entry}
+                        -{diaryEntry.datePosted}
+                        <div>
+                        <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}} onClick={() => {
+                            deleteEntry(diaryEntry.id)
+                        }}>Delete
+                        </button>
+                        </div>
+                        </p>
+                })
+
+            }
+            <DiaryEntryForm setter={setDiaryEntry} />
         </>
     )
 }

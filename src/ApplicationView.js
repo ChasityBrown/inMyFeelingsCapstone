@@ -16,13 +16,13 @@ export const ApplicationViews = () => {
                 <Quotes />
             </Route>
             <Route exact path="/sillycontent">
-                <SillyContent/>
+                <SillyContent />
             </Route>
             <Route exact path="/diary">
-                <DiaryEntries/>
+                <DiaryEntries />
             </Route>
             <Route exact path="/songs">
-                <FaveSongs/>
+                <FaveSongs />
             </Route>
         </>
     )
