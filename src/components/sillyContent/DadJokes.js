@@ -22,8 +22,8 @@ export const DadJokes = ({ content }) => {
     }
     const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
     return (
-        <>
-            <h3>Jokes</h3>
+        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "column", justifyContent: "space-around", borderSpacing: "5", alignItems: "center"}}>
+            <h3 style={{backgroundColor: "black", fontWeight: "bold" }}>Dad Jokes</h3>
             {
                 dadJokes.map(dadJoke => {
                     return <p style={{fontSize: "24px", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted",
@@ -38,6 +38,6 @@ export const DadJokes = ({ content }) => {
                             : ""}</p>
                 })
             }
-        </>
+        </div>
     )
 }

@@ -5,6 +5,7 @@
 --------------------------------------------------------------*/
 body {
   color: pink;
+  background-image: url("./components/images/betterIvy.jpg");
 }
 button,
 input,

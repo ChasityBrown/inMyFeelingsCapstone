@@ -9,7 +9,6 @@ import "./InMyFeelings.css";
 export const InMyFeelings = () => { //function/component that will render html with browser
   return (
     <>
-    <div style={{backgroundImage: "url(/background.jpeg)"}}>
       <Route
         render={() => {
           if (localStorage.getItem("feelings_user")) {
@@ -32,8 +31,8 @@ export const InMyFeelings = () => { //function/component that will render html w
       <Route path="/register">
         <Register />
       </Route>
-</div>
-    </>
+</>
+    
   )
 }
 //simply contains other components that are responsible for the presentation and behavior of the application

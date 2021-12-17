@@ -54,7 +54,7 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Register for "All in My Feelings"</h1>
+                <h2 className="h3 mb-3 font-weight-normal">Register for "All in My Feelings"</h2>
                 <fieldset>
                     <label htmlFor="name"> What Do They Call You? </label>
                     <input style={{fontSize: "large", color: "seagreen", backgroundColor: "pink"}} onChange={updateUser}

@@ -28,8 +28,8 @@ export const DiaryEntries = () => {
     }
     const loggedInUser = diaryEntries.filter((diaryEntry) => diaryEntry.userId === parseInt(localStorage.getItem("feelings_user")))
     return (
-        <>
-            <h2>Let it Out!</h2>
+        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "column", justifyContent: "space-around", borderSpacing: "5", textAlign: "center"}} >
+            <h2>Let It Out</h2>
             {
                 loggedInUser.map(diaryEntry => {
                     return <p style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted"}}
@@ -46,6 +46,6 @@ export const DiaryEntries = () => {
 
             }
             <DiaryEntryForm setter={setDiaryEntry} />
-        </>
+        </div>
     )
 }

@@ -27,8 +27,9 @@ export const Quotes = () => {
         })
     }
     const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
+
     return (
-        <>
+        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "column", justifyContent: "space-around", borderSpacing: "5", textAlign: "center"}} >
             <h2>Quotes</h2>
             {
                 quotes.map(quote => {
@@ -48,6 +49,6 @@ export const Quotes = () => {
                 })
             }
             <QuoteForm quoteSetter={setQuotes} />
-        </>
+        </div>
     )
 }

@@ -104,8 +104,7 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
             <>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="name">Meme</label>
-                        <input value={meme.memeUrl}
+                        <input style={{fontSize: "large", color: "seagreen", width: "40%"}} value={meme.memeUrl}
                             onChange={
                                 (evt) => {
                                     const copy = { ...meme }
@@ -122,8 +121,7 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
                 </fieldset>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="name">Meme</label>
-                        <input value={meme.caption}
+                        <input style={{fontSize: "large", color: "seagreen", width: "40%"}} value={meme.caption}
                             onChange={
                                 (evt) => {
                                     const copy = { ...meme }
@@ -135,7 +133,8 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
                             type="text"
                             className="form-control"
                             placeholder="Caption" />
-                        <button onClick={addNewMeme} className="btn btn-primary">
+                        <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}}
+                        onClick={addNewMeme} className="btn btn-primary">
                             Save
                         </button>
                     </div>
@@ -147,8 +146,7 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
         return (
             <><fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Dad Joke</label>
-                    <input value={dadJoke.joke}
+                    <input style={{fontSize: "large", color: "seagreen", width: "40%"}} value={dadJoke.joke}
                         onChange={
                             (evt) => {
                                 const copy = { ...dadJoke }
@@ -160,7 +158,8 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
                         type="text"
                         className="form-control"
                         placeholder="Insert corny joke" />
-                    <button onClick={addNewDadJoke} className="btn btn-primary">
+                    <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}}
+                    onClick={addNewDadJoke} className="btn btn-primary">
                         Save
                     </button>
                 </div>
@@ -172,11 +171,11 @@ export const SillyContentForm = ({ contentSetter, anotherContentSetter }) => {
     return (
         <>
             <form className="SillyContentForm">
-                <h2 className="SillyContentForm__title">Brighten someone's day with your own silliness</h2>
+                <h2 className="SillyContentForm__title" style={{color: "pink", fontWeight: "bold", backgroundColor: "black", display: "flex", flexWrap: "wrap", flexDirection: "column", width: "30%", justifyContent: "space-around", textAlign: "center"}}>Brighten someone's day with your own silliness</h2>
                 <fieldset>
                     <div className="form-group">
-                        <label htmlFor="sillyContent">What do you want to post?</label>
-                        <select
+                        <label style={{fontSize: "24px", fontWeight: "bold", backgroundColor: "black"}} htmlFor="sillyContent">What do you want to post?</label>
+                        <select style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", width: "30%"}}
                             value={sillyContent}
                             name="sillyContent"
                             id="sillyContentId"

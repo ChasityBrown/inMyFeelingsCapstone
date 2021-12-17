@@ -39,14 +39,14 @@ export const Login = () => {
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>All in My Feelings</h1>
                     <h2>Please Sign In</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail" style={{fontSize: "24px"}}> Email address </label>
+                    
+                        
                         <input type="email"
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
                             placeholder="example@email.com"
                             required autoFocus />
-                    </fieldset>
+
                     <fieldset>
                         <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink"}} type="submit">
                             Sign in

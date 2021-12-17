@@ -27,13 +27,15 @@ export const Memes = ({ memeContent }) => {
             {
                 memes.map(meme => {
                     return <div className="post__tagline" key={meme.id}>
-                        <img className="post__image" src={meme.memeUrl} alt=""></img> <p style={{fontSize: "24px", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted",
-            width: "25%", display: "flex", justifyContent: "center"}}>"{meme.caption}"</p>
+                        <img className="post__image" src={meme.memeUrl} alt=""></img> <p style={{
+                            fontSize: "24px", color: "seagreen", backgroundColor: "pink", borderStyle: "dotted",
+                            width: "25%", display: "flex", justifyContent: "center"
+                        }}>"{meme.caption}"</p>
                         {loggedInUser === meme.userId
-                            ? <button style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "ridge"}}
-                            onClick={() => {
-                                deleteMeme(meme.id)
-                            }}>Delete
+                            ? <button style={{ fontSize: "large", color: "seagreen", backgroundColor: "pink", borderStyle: "ridge" }}
+                                onClick={() => {
+                                    deleteMeme(meme.id)
+                                }}>Delete
                             </button>
                             : ""}
                     </div>
