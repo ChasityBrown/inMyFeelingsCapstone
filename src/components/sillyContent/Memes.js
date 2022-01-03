@@ -23,13 +23,14 @@ export const Memes = ({ memeContent }) => {
     const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
     return (
         <>
-            <h3>Memes</h3>
+            <h2>Memes</h2>
+            <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-around", alignItems: "center"}}>
             {
                 memes.map(meme => {
-                    return <div className="post__tagline" key={meme.id}>
+                    return <div className="post__tagline" key={meme.id} >
                         <img className="post__image" src={meme.memeUrl} alt=""></img> <p style={{
-                            fontSize: "24px", color: "seagreen", backgroundColor: "pink", borderStyle: "dotted",
-                            width: "25%", display: "flex", justifyContent: "center"
+                            fontSize: "16px", color: "seagreen", backgroundColor: "pink", borderStyle: "solid",
+                            width: "30%", display: "flex", justifyContent: "center", flexDirection: "row"
                         }}>"{meme.caption}"</p>
                         {loggedInUser === meme.userId
                             ? <button style={{ fontSize: "large", color: "seagreen", backgroundColor: "pink", borderStyle: "ridge" }}
@@ -41,6 +42,7 @@ export const Memes = ({ memeContent }) => {
                     </div>
                 })
             }
+            </div>
         </>
     )
 }

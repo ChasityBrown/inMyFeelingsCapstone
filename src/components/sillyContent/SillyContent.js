@@ -31,7 +31,7 @@ export const SillyContent = () => {
 
     return (
         <>
-            <h2 style={{backgroundColor: "black", fontWeight: "bolder", display: "flex", textAlign: "center"}}>Here's some silly content to make you smile. Scroll to the bottom if you've got something you'd like to post. You might just make someone's day!</h2>
+            <h2 style={{backgroundColor: "white", fontWeight: "bolder", display: "flex", textAlign: "center"}}>Here's some silly content to make you smile. Scroll to the bottom if you've got something you'd like to post. You might just make someone's day!</h2>
             <DadJokes content={jokeContent} />
             <Memes memeContent={memeContent} />
             <SillyContentForm contentSetter={setJokeContent} anotherContentSetter={setMemeContent} />

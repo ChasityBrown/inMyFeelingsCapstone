@@ -22,11 +22,12 @@ export const DadJokes = ({ content }) => {
     }
     const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
     return (
-        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "column", justifyContent: "space-around", borderSpacing: "5", alignItems: "center"}}>
-            <h3 style={{backgroundColor: "black", fontWeight: "bold" }}>Dad Jokes</h3>
+        <>
+            <h2>Dad Jokes</h2>
+        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-around", borderSpacing: "5", alignItems: "center"}}>
             {
                 dadJokes.map(dadJoke => {
-                    return <p style={{fontSize: "24px", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted",
+                    return <p style={{fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
                     width: "30%", display: "flex", alignItems: "center"}}
                     key={dadJoke.id}>"{dadJoke.joke}"
                         {loggedInUser === dadJoke.userId
@@ -39,5 +40,6 @@ export const DadJokes = ({ content }) => {
                 })
             }
         </div>
+        </>
     )
 }

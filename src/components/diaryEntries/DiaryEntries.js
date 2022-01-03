@@ -32,7 +32,7 @@ export const DiaryEntries = () => {
             <h2>Let It Out</h2>
             {
                 loggedInUser.map(diaryEntry => {
-                    return <p style={{fontSize: "large", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted"}}
+                    return <p style={{fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid", width: "30%", display: "flex", alignItems: "center"}}
                     key={diaryEntry}>{diaryEntry.entry}
                         -{diaryEntry.datePosted}
                         <div>

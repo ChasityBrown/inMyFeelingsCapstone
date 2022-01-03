@@ -44,10 +44,10 @@ export const QuoteForm = ({ quoteSetter }) => {
     }
     return (
         <form className="QuoteForm">
-            <h2 className="QuoteForm__title">Wanna leave a quote of your own?</h2>
+            <h2 style={{backgroundColor: "black"}} className="QuoteForm__title">Wanna leave a quote of your own?</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Quote</label>
+                    <label style={{backgroundColor: "black", fontWeight: "bold"}} htmlFor="name">Quote</label>
                     <input value={quote.text}
                         onChange={
                             (evt) => {
@@ -65,7 +65,7 @@ export const QuoteForm = ({ quoteSetter }) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Author</label>
+                    <label style={{backgroundColor: "black", fontWeight: "bold"}} htmlFor="name">Author</label>
                     <input value={quote.author}
                         onChange={
                             (evt) => {

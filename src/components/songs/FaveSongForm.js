@@ -42,11 +42,10 @@ export const FaveSongForm = ({ songSetter }) => {
 
     return (
         <form className="SongForm">
-            <h2 className="SongForm__title">What's your favorite song?</h2>
+            <h2 style={{backgroundColor: "black"}} className="SongForm__title">What's your favorite song?</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Artist</label>
-                    <input style={{width: "30%"}} value={faveSong.artist}
+                    <input style={{width: "50%"}} value={faveSong.artist}
                         onChange={
                             (evt) => {
                                 const copy = { ...faveSong }
@@ -63,8 +62,7 @@ export const FaveSongForm = ({ songSetter }) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Title</label>
-                    <input style={{width: "30%"}} value={faveSong.title}
+                    <input style={{width: "50%"}} value={faveSong.title}
                         onChange={
                             (evt) => {
                                 const copy = { ...faveSong }

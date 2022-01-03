@@ -46,7 +46,6 @@ export const DiaryEntryForm = ({ setter }) => {
             <h2 className="diaryEntryForm__title">What's on Your Mind Today?</h2>
             <fieldset>
                 <div className="entryForm">
-                    <label style={{fontSize: "24px"}} htmlFor="name">Type Here</label>
                     <textarea className="entryForm" id="textBody" name="letter" rows="25" cols="40"
                     value={diaryEntry.entry}
                         onChange={

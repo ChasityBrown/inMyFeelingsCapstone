@@ -29,13 +29,15 @@ export const Quotes = () => {
     const loggedInUser = parseInt(localStorage.getItem("feelings_user"))
 
     return (
-        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "column", justifyContent: "space-around", borderSpacing: "5", textAlign: "center"}} >
+        <>
             <h2>Quotes</h2>
+        <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-around", borderSpacing: "5", textAlign: "center"}} >
             {
                 quotes.map(quote => {
-                    return <p style={{fontSize: "24px", color: "seagreen",backgroundColor: "pink", borderStyle: "dotted",
-                    width: "30%", display: "flex", alignItems: "center"}}
-                    key={quote.id}>"{quote.text}" by {quote.author}
+                    return <p style={{ display: "flex", alignItems: "center", fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
+                    width: "30%"}}
+                    key={quote.id}>
+                        "{quote.text}" by {quote.author}
                         {loggedInUser === quote.userId
                             ? 
                             <div>
@@ -48,7 +50,9 @@ export const Quotes = () => {
                     </p>
                 })
             }
+           
             <QuoteForm quoteSetter={setQuotes} />
         </div>
+        </>
     )
 }
