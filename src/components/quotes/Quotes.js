@@ -34,7 +34,7 @@ export const Quotes = () => {
         <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-around", borderSpacing: "5", textAlign: "center"}} >
             {
                 quotes.map(quote => {
-                    return <p style={{ display: "flex", alignItems: "center", fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
+                    return <p style={{ display: "flex", justifyContent: "space-around", fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
                     width: "30%"}}
                     key={quote.id}>
                         "{quote.text}" by {quote.author}

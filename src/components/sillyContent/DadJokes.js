@@ -27,7 +27,7 @@ export const DadJokes = ({ content }) => {
         <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-around", borderSpacing: "5", alignItems: "center"}}>
             {
                 dadJokes.map(dadJoke => {
-                    return <p style={{fontSize: "16px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
+                    return <p style={{fontSize: "20px", color: "seagreen",backgroundColor: "pink", borderStyle: "solid",
                     width: "30%", display: "flex", alignItems: "center"}}
                     key={dadJoke.id}>"{dadJoke.joke}"
                         {loggedInUser === dadJoke.userId

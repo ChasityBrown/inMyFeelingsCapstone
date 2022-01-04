@@ -35,8 +35,8 @@ export const FaveSongs = () => {
                 {
 
                     faveSongs.map(song => {
-                        return <p style={{display: "flex", alignItems: "center", fontSize: "16px", color: "seagreen", backgroundColor: "pink", borderStyle: "solid", borderRadius: "50%",
-                            marginTop: "50px", height: "40%"}}
+                        return <p style={{display: "flex", justifyContent: "space-around", fontSize: "16px", color: "seagreen", backgroundColor: "pink", borderStyle: "solid",
+                            marginTop: "50px", height: "60%"}}
                             key={song.id}>
                             "{song.title}" by {song.artist}
                             {loggedInUser === song.userId

@@ -28,10 +28,7 @@ export const Memes = ({ memeContent }) => {
             {
                 memes.map(meme => {
                     return <div className="post__tagline" key={meme.id} >
-                        <img className="post__image" src={meme.memeUrl} alt=""></img> <p style={{
-                            fontSize: "16px", color: "seagreen", backgroundColor: "pink", borderStyle: "solid",
-                            width: "30%", display: "flex", justifyContent: "center", flexDirection: "row"
-                        }}>"{meme.caption}"</p>
+                        <img className="post__image" src={meme.memeUrl} alt=""></img> <p >"{meme.caption}"</p>
                         {loggedInUser === meme.userId
                             ? <button style={{ fontSize: "large", color: "seagreen", backgroundColor: "pink", borderStyle: "ridge" }}
                                 onClick={() => {
